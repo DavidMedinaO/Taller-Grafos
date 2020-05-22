@@ -144,7 +144,7 @@ public class EstructurasNoLineales {
         System.out.print("Lista de adyacencia => ");//PUNTO 1
         NodosG.Profundidad(0);
 
-        System.out.println("\n" + "Tiene el mismo numero de entradas y salidas => " + NodosG.EntradasySalidas()); //PUNTO 2
+        System.out.println("\n" + "Tiene el mismo numero de entradas y salidas? => " + NodosG.EntradasySalidas()); //PUNTO 2
 
         System.out.print("Arcos faltantes => "); // PUNTO 3
         NodosArco.arcos();
