@@ -125,7 +125,7 @@ public class EstructurasNoLineales {
         System.out.println(maxData.getDataHeap());
         System.out.println("");
         
-        //TALLER GRAFOS
+        ///TALLER GRAFOS
         System.out.println("----------TALLER GRAFOS---------");
         Graph NodosG = new Graph(4);// Grafo para validar punto 1 y 2
         NodosG.addEdge(0, 1);
