@@ -94,5 +94,79 @@ public class Graph {
             }
         }
     }
+    
+    public void Profundidad(int posicion){
+    boolean Visitado[] = new boolean[totalNodes];
+    Profundidad(posicion, Visitado);
+   }
+   
+   private void Profundidad(int posicion, boolean Visitado[]){
+       Visitado[posicion] = true;      
+       for(int v : aList[posicion]){
+           System.out.print(posicion + " ");
+           if (!Visitado[v]) {
+               Profundidad(v, Visitado);
+           }
+       }
+   }
+   
+   
+    public boolean EntradasySalidas() {
+
+        boolean funciona = true;
+        for (int i = 0; i < totalNodes; i++) {
+            int cont = 0;
+            for (int j = 0; j < totalNodes; j++) {
+                if (aMatrix[i][j]) {
+                    cont++;
+
+                }
+            }
+
+            if (cont != EntradasySalidas2(i)) {
+
+                funciona = false;
+
+            }
+            if (!funciona) {
+                break;
+            }
+
+        }
+        return funciona;
+
+    }
+   
+    private int EntradasySalidas2(int k) {
+
+        int cont = 0;
+        for (int i = 0; i < totalNodes; i++) {
+
+            if (aMatrix[i][k]) {
+                cont++;
+
+            }
+
+        }
+
+        return cont;
+
+    }
+    
+    
+    
+    public void arcos() {
+        System.out.print("[");
+        for (int i = 0; i < totalNodes; i++) {
+            for (int j = 0; j < totalNodes; j++) {
+                if (!aMatrix[i][j] && i > j && i != j && !aMatrix[j][i]) {
+
+                    System.out.print("[" + j + "," + i + "]" + ",");
+                }
+            }
+        }
+        System.out.println("]");
+
+    }
 
 }
